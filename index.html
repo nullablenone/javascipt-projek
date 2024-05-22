@@ -12,10 +12,15 @@
 
     <p id="date"></p>
 
+    <p id="hidden">ini teks yang akan di sembunykan</p>
+
     <script>
+        let hidden = document.getElementById("hidden");
         let date = document.getElementById("date");
         function displayDateTime() {
             date.innerHTML = Date();
+
+            hidden.style.display = "none";
         }
     </script>
     
