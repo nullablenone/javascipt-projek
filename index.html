@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Date Time</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <!-- menampilan tanggal dan waktu -->
+    <div class="relative bg-blue-500">
+        <p id="hidden" class="text-white absolute">ini teks yang akan di sembunykan</p>
+    </div>
 
-    <button onclick="displayDateTime()">Click Bro</button>
+    <div class="flex bg-slate-700 min-h-screen items-center justify-center flex-col">
 
-    <p id="date"></p>
+        <p class="text-white my-3">Check Kapan lo Teken Tombol ini</p>
+        <button class="text-white bg-blue-500 p-2 rounded font-bold" onclick="displayDateTime()">Click Bro</button>
+        <p id="date"></p>
 
-    <p id="hidden">ini teks yang akan di sembunykan</p>
+
+    </div>
+
 
     <script>
+
         let hidden = document.getElementById("hidden");
+
         let date = document.getElementById("date");
         function displayDateTime() {
+            // menampilan tanggal dan waktu
             date.innerHTML = Date();
-
+            // menyembunyikan teks
             hidden.style.display = "none";
         }
     </script>
-    
+
 </body>
+
 </html>
