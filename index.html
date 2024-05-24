@@ -16,16 +16,22 @@
     <div class="flex bg-slate-700 min-h-screen items-center justify-center flex-col">
 
         <p class="text-white my-3">Check Kapan lo Teken Tombol ini</p>
-        <button class="text-white bg-blue-500 p-2 rounded font-bold" onclick="displayDateTime()">Click Bro</button>
+        <button class="text-white bg-blue-500 p-2 rounded font-bold my-3" onclick="displayDateTime()">Click Bro</button>
         <p id="date"></p>
 
+        <button class="text-white bg-red-500 p-2 rounded font-bold my-3" onclick="window.print()">Print</button>
+        
 
     </div>
 
 
+
     <script>
+        // pesan yang ditampilakan saat brawser di muat
+        // window.alert("welcome")
 
         let hidden = document.getElementById("hidden");
+        console.log(hidden.value)
 
         let date = document.getElementById("date");
         function displayDateTime() {
