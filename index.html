@@ -4,44 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Date Time</title>
+    <title>Kalkulator</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-    <div class="relative bg-blue-500">
-        <p id="hidden" class="text-white absolute">ini teks yang akan di sembunykan</p>
+    <div class="flex justify-center bg-slate-800 min-h-screen items-center">
+        <form action="#">
+            <label for="" class="block text-sm font-bold mb-2 text-white">Nomor Pertama</label>
+            <input class="text-sm border border-slate-400 w-full rounded py-2 px-3 placeholder: opasitiy-50" type="text"
+                id="nomor_1" placeholder="masukan angka pertama">
+            <label for="" class="block text-sm font-bold mb-2 text-white">Nomor Kedua</label>
+            <input type="text" id="nomor_2"
+                class="text-sm border border-slate-400 w-full rounded py-2 px-3 placeholder: opasitiy-50 mb-2"
+                placeholder="masukan angka kedua">
+            <p id="hasil"
+                class="block bg-white text-sm border border-slate-400 w-full rounded py-2 px-3 placeholder: opasitiy-50 mb-2">...
+            </p>
+            <button class="bg-blue-500 text-white rounded px-2 font-bold py-1" onclick="tambah()">tambah</button>
+            <button class="bg-blue-500 text-white rounded px-2 font-bold py-1" onclick="kurang()">kurang</button>
+            <button class="bg-blue-500 text-white rounded px-2 font-bold py-1" onclick="bagi()">bagi</button>
+            <button class="bg-blue-500 text-white rounded px-2 font-bold py-1" onclick="kali()">kali</button>
+        </form>
     </div>
-
-    <div class="flex bg-slate-700 min-h-screen items-center justify-center flex-col">
-
-        <p class="text-white my-3">Check Kapan lo Teken Tombol ini</p>
-        <button class="text-white bg-blue-500 p-2 rounded font-bold my-3" onclick="displayDateTime()">Click Bro</button>
-        <p id="date"></p>
-
-        <button class="text-white bg-red-500 p-2 rounded font-bold my-3" onclick="window.print()">Print</button>
-        
-
-    </div>
-
-
 
     <script>
-        // pesan yang ditampilakan saat brawser di muat
-        // window.alert("welcome")
+        let nomor1 = document.getElementById("nomor_1");
+        let nomor2 = document.getElementById("nomor_2");
+        let hasil = document.getElementById("hasil");
 
-        let hidden = document.getElementById("hidden");
-        console.log(hidden.value)
-
-        let date = document.getElementById("date");
-        function displayDateTime() {
-            // menampilan tanggal dan waktu
-            date.innerHTML = Date();
-            // menyembunyikan teks
-            hidden.style.display = "none";
+        function tambah() {
+            let parseNomor1 = parseInt(nomor1.value);
+            let parseNomor2 = parseInt(nomor2.value);
+            let result = parseNomor1 + parseNomor2;
+            hasil.innerHTML = result;
         }
-    </script>
+        function kurang() {
+            let parseNomor1 = parseInt(nomor1.value);
+            let parseNomor2 = parseInt(nomor2.value);
+            let result = parseNomor1 - parseNomor2;
+            hasil.innerHTML = result;
+        }
+        function kali() {
+            let parseNomor1 = parseInt(nomor1.value);
+            let parseNomor2 = parseInt(nomor2.value);
+            let result = parseNomor1 * parseNomor2;
+            hasil.innerHTML = result;
+        }
+        function bagi() {
+            let parseNomor1 = parseInt(nomor1.value);
+            let parseNomor2 = parseInt(nomor2.value);
+            let result = parseNomor1 / parseNomor2;
+            hasil.innerHTML = result;
+        }
 
+
+
+
+    </script>
 </body>
 
 </html>
